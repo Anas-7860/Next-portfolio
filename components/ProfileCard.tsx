@@ -39,7 +39,7 @@ export default function ProfileCard({
           <h2 className="text-xl font-semibold tracking-tight">Anas Khan</h2>
 
           <p className="mt-1 text-sm text-[rgb(var(--color-muted))]">
-           ASDE <span className='text-red-500'>@</span> <span className='text-blue-400 font-bold'><Link href="https://www.bettrsw.com/">Better Software</Link></span>
+           Web Developer<span className='text-red-500'></span>
           </p>
 {/* 
           <p className="mt-4 max-w-md text-sm leading-relaxed text-[rgb(var(--color-muted))]">

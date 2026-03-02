@@ -76,7 +76,7 @@ export default function Page() {
                 </div>
                 <p className="mt-2 text-[rgb(var(--color-accent))] font-medium"> <Typewriter /></p>
                 <p className="mt-3 text-[rgb(var(--color-muted))] max-w-prose">
-                  Associate Software Development Engineer, currently building and maintaining full-stack web applications with a focus on <Highlight variant="amber">clean architecture</Highlight>, <Highlight variant="emerald">performance</Highlight>, and <Highlight variant="violet">reliable user experiences</Highlight>.
+                  Computer Science student and web developer, building and maintaining full-stack web applications with a focus on <Highlight variant="amber">clean architecture</Highlight>, <Highlight variant="emerald">performance</Highlight>, and <Highlight variant="violet">reliable user experiences</Highlight>.
                 </p>
 
               </Card>
@@ -88,8 +88,8 @@ export default function Page() {
               <div className="rounded-lg p-6">
                 <h2 className="text-xl font-semibold">About</h2>
                 <p className="mt-2 text-[rgb(var(--color-muted))] max-w-prose">
-                  I’m Anas Khan, a Computer Science student and Associate Software Development Engineer who enjoys building reliable, user-focused web applications. I work primarily with <Highlight variant="sky">MERN</Highlight> and <Highlight variant="accent">Next.js</Highlight>, and I’m comfortable taking a product from idea to deployment.
-                  I value <Highlight variant="amber">clean architecture</Highlight>, <Highlight variant="emerald">performance</Highlight>, and thoughtful UX, and I continuously sharpen my problem-solving skills through regular DSA practice. I’m currently employed and open to select opportunities that align with my long-term growth as a software engineer.
+                  I’m Anas Khan, a Computer Science student and web developer who enjoys building reliable, user-focused web applications. I work primarily with <Highlight variant="sky">MERN</Highlight> and <Highlight variant="accent">Next.js</Highlight>, and I’m comfortable taking a product from idea to deployment.
+                  I value <Highlight variant="amber">clean architecture</Highlight>, <Highlight variant="emerald">performance</Highlight>, and thoughtful UX, and I continuously sharpen my problem-solving skills through regular DSA practice. I’m currently seeking opportunities and open to select roles that align with my long-term growth as a software engineer.
                 </p>
               </div>
             </Section>
@@ -204,7 +204,7 @@ export default function Page() {
                     title="B.E. in Computer Science"
                     org="Chandigarh University"
                     period="2022 – 2026"
-                    detail="CGPA: 7.74/10"
+                    detail="CGPA: 7.75/10"
                   />
                   <TimelineItem
                     title="Class 12 (CBSE)"

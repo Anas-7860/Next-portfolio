@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 
 const roles = [
-  'Associate Software Development Engineer',
+  'Software Engineer',
   'Full Stack Developer',
   'MERN & Next.js Engineer',
   'Problem Solver',

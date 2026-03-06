@@ -3,17 +3,28 @@ export default function TimelineItem({
   org,
   period,
   detail,
+  logoSrc,
 }: {
   title: string;
   org: string;
   period: string;
   detail: string;
+  logoSrc?: string;
 }) {
   return (
     <div className="relative pl-6">
       <span className="absolute left-0 top-1.5 h-2 w-2 rounded-full bg-[rgb(var(--color-accent))]" />
-      <div className="flex items-baseline justify-between">
-        <h3 className="text-sm font-medium">{title} — {org}</h3>
+      <div className="flex items-baseline justify-between gap-3">
+        <div className="flex items-center gap-2">
+          {logoSrc && (
+            <img
+              src={logoSrc}
+              alt={`${org} logo`}
+              className="h-5 w-5 rounded-full object-cover"
+            />
+          )}
+          <h3 className="text-sm font-medium">{title} — {org}</h3>
+        </div>
         <span className="text-xs text-[rgb(var(--color-muted))]">{period}</span>
       </div>
       <p className="mt-1 text-sm text-[rgb(var(--color-muted))]">{detail}</p>

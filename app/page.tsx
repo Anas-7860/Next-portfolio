@@ -19,12 +19,15 @@ export default function Page() {
     'TypeScript': 'bg-blue-600/10 text-blue-700 border-blue-600/30',
     'C/C++': 'bg-slate-500/10 text-slate-700 border-slate-500/30',
     'SQL': 'bg-teal-500/10 text-teal-700 border-teal-500/30',
+    'Python': 'bg-green-600/10 text-green-700 border-green-600/30',
+    'Solidity': 'bg-emerald-700/10 text-emerald-800 border-emerald-700/30',
     // Frameworks & Libraries
     'React': 'bg-cyan-500/10 text-cyan-700 border-cyan-500/30',
     'Next.js': 'bg-neutral-500/10 text-neutral-700 border-neutral-500/30',
     'Node.js': 'bg-green-500/10 text-green-700 border-green-500/30',
     'Express.js': 'bg-zinc-500/10 text-zinc-700 border-zinc-500/30',
     'Tailwind CSS': 'bg-sky-500/10 text-sky-700 border-sky-500/30',
+    'Flask': 'bg-amber-500/10 text-amber-700 border-amber-500/30',
     // Databases & Tools
     'MongoDB': 'bg-emerald-500/10 text-emerald-700 border-emerald-500/30',
     'MySQL': 'bg-indigo-500/10 text-indigo-700 border-indigo-500/30',
@@ -34,6 +37,10 @@ export default function Page() {
     'Postman': 'bg-orange-500/10 text-orange-700 border-orange-500/30',
     'Figma': 'bg-violet-500/10 text-violet-700 border-violet-500/30',
     'Clerk': 'bg-purple-500/10 text-purple-700 border-purple-500/30',
+    'SendGrid': 'bg-sky-600/10 text-sky-700 border-sky-600/30',
+    'Twilio': 'bg-rose-500/10 text-rose-700 border-rose-500/30',
+    'MetaMask': 'bg-orange-600/10 text-orange-700 border-orange-600/30',
+    'Ethereum': 'bg-indigo-600/10 text-indigo-700 border-indigo-600/30',
     'OOP': 'bg-fuchsia-500/10 text-fuchsia-700 border-fuchsia-500/30',
     'Data Structures & Algorithms': 'bg-amber-500/10 text-amber-700 border-amber-500/30',
     'REST APIs': 'bg-lime-500/10 text-lime-700 border-lime-500/30',
@@ -101,7 +108,7 @@ export default function Page() {
                   <div>
                     <h3 className="text-sm font-medium">Languages</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'C/C++', 'SQL'].map((s) => (
+                      {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'C/C++', 'SQL', 'Python', 'Solidity'].map((s) => (
                         <span key={s} className={`text-xs px-2 py-1 rounded border ${skillColors[s] ?? 'bg-gray-500/10 text-gray-700 border-gray-500/30'}`}>
                           {s}
                         </span>
@@ -111,7 +118,7 @@ export default function Page() {
                   <div>
                     <h3 className="text-sm font-medium">Frameworks & Libraries</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {['React', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'].map((s) => (
+                      {['React', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Flask'].map((s) => (
                         <span key={s} className={`text-xs px-2 py-1 rounded border ${skillColors[s] ?? 'bg-gray-500/10 text-gray-700 border-gray-500/30'}`}>
                           {s}
                         </span>
@@ -121,7 +128,7 @@ export default function Page() {
                   <div>
                     <h3 className="text-sm font-medium">Databases & Tools</h3>
                     <div className="mt-2 flex flex-wrap gap-2">
-                      {['MongoDB', 'MySQL', 'Supabase', 'Git', 'VS Code', 'Postman', 'Figma', 'Clerk', 'OOP', 'Data Structures & Algorithms', 'REST APIs'].map((s) => (
+                      {['MongoDB', 'MySQL', 'Supabase', 'Git', 'VS Code', 'Postman', 'Figma', 'Clerk', 'SendGrid', 'Twilio', 'MetaMask', 'Ethereum', 'OOP', 'Data Structures & Algorithms', 'REST APIs'].map((s) => (
                         <span key={s} className={`text-xs px-2 py-1 rounded border ${skillColors[s] ?? 'bg-gray-500/10 text-gray-700 border-gray-500/30'}`}>
                           {s}
                         </span>
@@ -186,20 +193,37 @@ export default function Page() {
                 <CertificationCard
                   title="Summer Training Certification"
                   org="MetaCrafters"
+                  brand="metacrafters"
                   detail="Focused on software development fundamentals and modern web practices."
                 />
               </div>
             </Section>
-            <Section id="experience" ariaLabel="Experience and Education" className="py-10">
+            <Section id="experience" ariaLabel="Experience" className="py-10">
               <Card>
-                <h2 className="text-xl font-semibold">Experience / Education</h2>
+                <h2 className="text-xl font-semibold">Experience</h2>
                 <div className="mt-4 space-y-4">
                   <TimelineItem
-                    title="Summer Trainee"
-                    org="MetaCrafters"
-                    period="June 2024 – August 2024"
-                    detail="Software development exposure with React, frontend–backend interaction, REST APIs, and application logic; learned production-level development practices."
+                    title="Associate Software Engineer Intern"
+                    org="Better Software (Remote, India)"
+                    period="Jan 2026 – Mar 2026"
+                    logoSrc="/better.webp"
+                    detail="Upgraded a legacy Flask-based notification system to a fully asynchronous architecture, integrated SendGrid and Twilio for email and SMS automation, and implemented failure-recovery logic to keep the core application resilient to third-party outages."
                   />
+                  <TimelineItem
+                    title="Blockchain Development Trainee"
+                    org="MetaCrafters (Remote, USA)"
+                    period="June 2024 – Aug 2024"
+                    logoSrc="/metacrafters.jpeg"
+                    detail="Developed and deployed Solidity-based dApps on Ethereum testnets, built React frontends with MetaMask connectivity, and managed the full lifecycle of basic blockchain projects from smart contracts to UI event handling."
+                  />
+                </div>
+              </Card>
+            </Section>
+
+            <Section id="education" ariaLabel="Education" className="py-10">
+              <Card>
+                <h2 className="text-xl font-semibold">Education</h2>
+                <div className="mt-4 space-y-4">
                   <TimelineItem
                     title="B.E. in Computer Science"
                     org="Chandigarh University"
@@ -260,7 +284,7 @@ export default function Page() {
                       <path d="M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 8.98h4v12H3v-12Zm7 0h3.8v1.64h.05c.53-.98 1.82-2.02 3.75-2.02 4.01 0 4.75 2.64 4.75 6.07v6.31h-4v-5.6c0-1.34-.03-3.06-1.87-3.06-1.88 0-2.17 1.46-2.17 2.96v5.7h-4v-12Z" fill="currentColor" />
                     </svg>
                     <span>LinkedIn:</span>
-                    <a className="text-[rgb(var(--color-accent))] hover:underline" href="https://www.linkedin.com/in/anas-khan-b6722424b/" target="_blank" rel="noopener noreferrer">linkedin.com/in/anas-khan-b6722424b</a>
+                    <a className="text-[rgb(var(--color-accent))] hover:underline" href="https://www.linkedin.com/in/anas-khan-dev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/anas-khan-dev/</a>
                   </li>
                   {/* <li className="flex items-center gap-2">
                     <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4">

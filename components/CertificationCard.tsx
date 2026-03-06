@@ -3,10 +3,10 @@ export type Certification = {
   org: string;
   detail?: string;
   href?: string;
-  brand?: "freecodecamp" | "coursera";
+  brand?: "freecodecamp" | "coursera" | "metacrafters";
 };
 
-function brandStyles(brand?: "freecodecamp" | "coursera") {
+function brandStyles(brand?: "freecodecamp" | "coursera" | "metacrafters") {
   switch (brand) {
     case "freecodecamp":
       return {
@@ -14,6 +14,7 @@ function brandStyles(brand?: "freecodecamp" | "coursera") {
         border: "border-emerald-500/30",
         text: "text-emerald-700",
         label: "fcc",
+        logoSrc: "/fcc.jpeg",
       };
     case "coursera":
       return {
@@ -21,6 +22,15 @@ function brandStyles(brand?: "freecodecamp" | "coursera") {
         border: "border-blue-500/30",
         text: "text-blue-700",
         label: "C",
+        logoSrc: "/coursera.png",
+      };
+    case "metacrafters":
+      return {
+        bg: "bg-purple-500/10",
+        border: "border-purple-500/30",
+        text: "text-purple-700",
+        label: "M",
+        logoSrc: "/metacrafters.jpeg",
       };
     default:
       return {
@@ -38,7 +48,15 @@ export default function CertificationCard({ title, org, detail, href, brand }: C
     <article className="rounded-lg border bg-[rgb(var(--color-base))] p-6 transition hover:-translate-y-0.5 hover:shadow-md" aria-label={`${title} — ${org}`}>
       <div className="flex items-start gap-3">
         <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-semibold ${styles.bg} ${styles.border} ${styles.text}`}>
-          {styles.label}
+          {"logoSrc" in styles && styles.logoSrc ? (
+            <img
+              src={styles.logoSrc}
+              alt={`${org} logo`}
+              className="h-6 w-6 rounded-full object-cover"
+            />
+          ) : (
+            styles.label
+          )}
         </span>
         <div className="flex-1">
           <h3 className="text-base font-semibold">{title}</h3>

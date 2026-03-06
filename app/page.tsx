@@ -62,7 +62,7 @@ export default function Page() {
                 <div className="flex items-center justify-between gap-4">
                   <h1 className="text-3xl font-semibold tracking-tight">Anas Khan</h1>
                   <a
-                    href="/22BCS12871_Anas.pdf"
+                    href="/Anas-resume.pdf"
                     download
                     className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                     aria-label="Download CV"

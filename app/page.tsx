@@ -51,7 +51,7 @@ export default function Page() {
       <Navbar />
       <main id="home" className="mx-auto max-w-5xl px-4">
         {/* Mobile profile card */}
-        <div className="pt-16 md:hidden">
+        <div className="pt-8 md:hidden">
           <ProfileCard />
         </div>
 
@@ -299,6 +299,15 @@ export default function Page() {
           </div>
         </div>
       </main>
+      <footer className="mx-auto max-w-5xl px-4 pb-8">
+        <div className="border-t pt-5 text-center text-xs text-[rgb(var(--color-muted))] sm:flex sm:items-center sm:justify-between sm:text-left">
+          <p>© 2026 Anas Khan. Built with Next.js and Tailwind CSS.</p>
+          <div className="mt-2 flex items-center justify-center gap-4 sm:mt-0">
+            <a className="hover:text-[rgb(var(--color-text))]" href="#home">Top</a>
+            <a className="hover:text-[rgb(var(--color-text))]" href="https://github.com/Anas-7860" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

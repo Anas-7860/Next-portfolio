@@ -47,10 +47,10 @@ export default function ProfileCard({
           </p> */}
 
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-full border px-3 py-0.5 text-[11px]">
+            <span className="whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[10px] sm:px-3 sm:text-[11px]">
               Ludhiana, In
             </span>
-            <span className="rounded-full border px-3 py-0.5 text-[11px]">
+            <span className="whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[10px] sm:px-3 sm:text-[11px]">
               Open to roles
             </span>
           </div>

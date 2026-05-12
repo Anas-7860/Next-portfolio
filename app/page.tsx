@@ -171,6 +171,17 @@ export default function Page() {
                   />
                 </Reveal>
 
+                <Reveal>
+                  <ProjectCard
+                    title="Unhesitate"
+                    description="Psychology-inspired dream journal. Capture dreams and nightmares, reflect on patterns, turn insights into growth."
+                    stack={['Next.js', 'TypeScript', 'MongoDB', 'Clerk', 'Tailwind CSS']}
+                    githubUrl="https://github.com/Anas-7860/unhesitate"
+                    liveUrl="https://unhesitate.vercel.app"
+                    imageSrc="/unhesitate.png"
+                  />
+                </Reveal>
+
               </div>
             </Section>
             <Section id="certifications" ariaLabel="Certifications" className="py-10">

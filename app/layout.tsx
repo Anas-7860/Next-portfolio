@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   title: 'Anas Khan — Associate SDE / Full Stack Developer',
   description: 'Clean, minimalist portfolio showcasing projects, skills, and experience.',
-  icons: { icon: '/favicon.ico' },
+  icons: { icon: '/code.png' },
   openGraph: {
     title: 'Anas Khan — Full Stack Developer',
     description: 'Minimalist portfolio built with Next.js.',

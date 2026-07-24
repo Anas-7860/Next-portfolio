@@ -1,17 +1,19 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono, Plus_Jakarta_Sans } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading' });
+const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export const metadata: Metadata = {
   title: 'Anas Khan — Associate SDE / Full Stack Developer',
-  description: 'Clean, minimalist portfolio showcasing projects, skills, and experience.',
+  description: 'Modern portfolio showcasing projects, skills, and experience.',
   icons: { icon: '/code.png' },
   openGraph: {
     title: 'Anas Khan — Full Stack Developer',
-    description: 'Minimalist portfolio built with Next.js.',
+    description: 'Modern portfolio built with Next.js and Tailwind CSS.',
     url: 'https://your-domain.com',
     siteName: 'Anas Khan Portfolio',
     type: 'website',
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${jakarta.variable} ${mono.variable}`}>
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`

@@ -1,114 +1,97 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+
 export default function ProfileCard({
   imageSrc = '/best-pro-pic.jpeg',
+  leetcodeQuestions = 400,
+  leetcodeUsername = 'voldemort_007',
 }: {
   imageSrc?: string;
+  leetcodeQuestions?: number;
+  leetcodeUsername?: string;
 }) {
   const [imgOk, setImgOk] = useState(true);
+  const solvedCountLabel = leetcodeQuestions.toLocaleString();
+
   return (
-    <aside className="relative w-full rounded-2xl border bg-[rgb(var(--color-base))] p-8 md:p-7 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-      {/* Accent line */}
-      <span className="absolute inset-x-0 top-0 h-[3px] rounded-t-2xl bg-gradient-to-r from-transparent via-[rgb(var(--color-accent))]/50 to-transparent" />
-      {/* Main row */}
-      <div className="flex gap-8">
-        {/* Image */}
-        <div className="relative h-44 w-44 md:h-52 md:w-52 shrink-0 rounded-2xl p-[3px] bg-gradient-to-br from-[rgb(var(--color-accent))]/50 to-transparent">
-          <div className="relative h-full w-full overflow-hidden rounded-xl">
-            {imgOk ? (
-              <Image
-                src={imageSrc}
-                alt="Portrait of Anas Khan"
-                fill
-                className="object-cover"
-                onError={() => setImgOk(false)}
-                priority
-              />
-            ) : (
-              <div className="grid h-full w-full place-items-center bg-gray-200 dark:bg-gray-800">
-                <span className="text-xl font-semibold">AK</span>
-              </div>
-            )}
+    <aside className="relative w-full overflow-hidden rounded-[28px] border border-slate-200/70 bg-white/70 p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70 sm:p-7">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(52,211,153,0.18),transparent_40%)]" />
+      <div className="relative flex flex-col gap-6">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+          <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/70 bg-slate-100 p-[2px] shadow-lg dark:border-slate-700 dark:bg-slate-800 sm:h-28 sm:w-28">
+            <div className="relative h-full w-full overflow-hidden rounded-[14px]">
+              {imgOk ? (
+                <Image
+                  src={imageSrc}
+                  alt="Portrait of Anas Khan"
+                  fill
+                  className="object-cover"
+                  onError={() => setImgOk(false)}
+                  priority
+                />
+              ) : (
+                <div className="grid h-full w-full place-items-center bg-slate-200 text-lg font-semibold dark:bg-slate-800">
+                  AK
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-[rgb(var(--color-accent))]">Software Engineer</p>
+            <h2 className="mt-1 text-2xl font-semibold tracking-tight">Anas Khan</h2>
+            <p className="mt-1 text-sm text-[rgb(var(--color-muted))]">
+              Building fast, polished web experiences with modern tooling.
+            </p>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col justify-center">
-          <h2 className="text-xl font-semibold tracking-tight">Anas Khan</h2>
-
-          <p className="mt-1 text-sm text-[rgb(var(--color-muted))]">
-           Web Developer<span className='text-red-500'></span>
-          </p>
-{/* 
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-[rgb(var(--color-muted))]">
-            I build clean, reliable systems with thoughtful UX and strong engineering fundamentals.
-          </p> */}
-
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[10px] sm:px-3 sm:text-[11px]">
-              Ludhiana, In
-            </span>
-            <span className="whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[10px] sm:px-3 sm:text-[11px]">
-              Open to roles
-            </span>
-          </div>
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
+            Ludhiana, India
+          </span>
+          <span className="rounded-full border border-emerald-200 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:border-emerald-800 dark:text-emerald-300">
+            Open to opportunities
+          </span>
         </div>
-      </div>
 
-      {/* Actions */}
-      <div className="mt-8 grid grid-cols-2 gap-3 border-t pt-6">
-        <a
-          href="mailto:anaskhan9501499079@gmail.com"
-          className="flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium hover:bg-black/5 dark:hover:bg-white/5 transition"
-        >
-          <MailIcon /> Email
-        </a>
+        <div className="rounded-[20px] border border-slate-200/70 bg-slate-50/80 p-4 dark:border-slate-800 dark:bg-slate-950/70">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">LeetCode</p>
+              <p className="mt-1 text-lg font-semibold text-[rgb(var(--color-text))]">{solvedCountLabel}+</p>
+            </div>
+            <div className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-700 dark:text-emerald-300">
+              questions solved
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-[rgb(var(--color-muted))]">LeetCode progress shown here.</p>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">@{leetcodeUsername}</p>
+        </div>
 
-        <a
-          href="https://github.com/Anas-7860"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium hover:bg-black/5 dark:hover:bg-white/5 transition"
-        >
-          <GitHubIcon /> GitHub
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/anas-khan-b6722424b/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium hover:bg-black/5 dark:hover:bg-white/5 transition"
-        >
-          <LinkedInIcon /> LinkedIn
-        </a>
-
-        <a
-          href="https://leetcode.com/u/voldemort_007/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs font-medium hover:bg-black/5 dark:hover:bg-white/5 transition"
-        >
-          <LeetCodeIcon /> LeetCode
-        </a>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <a href="mailto:anaskhan.cse4@gmail.com" className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+            <MailIcon /> Email
+          </a>
+          <a href="https://github.com/Anas-7860" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+            <GitHubIcon /> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/anas-khan-b6722424b/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+            <LinkedInIcon /> LinkedIn
+          </a>
+          <a href="https://leetcode.com/u/voldemort_007/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800/80 dark:text-slate-200">
+            <LeetCodeIcon /> LeetCode
+          </a>
+        </div>
       </div>
     </aside>
   );
 }
 
-/* Icons unchanged */
 function MailIcon() {
   return (
-    <svg
-      className="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="M3 7l9 6 9-6" />
     </svg>

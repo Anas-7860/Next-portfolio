@@ -13,7 +13,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/60 bg-white/70 px-4 py-3 shadow-[0_10px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/70" aria-label="Primary">
         <a
           href="#home"
-          className="truncate text-base font-semibold tracking-tight text-[rgb(var(--color-text))] transition hover:text-[rgb(var(--color-accent))]"
+          className="truncate text-base font-semibold tracking-tight text-slate-900 transition hover:text-[rgb(var(--color-accent))] dark:text-slate-100"
           onClick={() => setIsMenuOpen(false)}
         >
           &lt; Anas Khan /&gt;
